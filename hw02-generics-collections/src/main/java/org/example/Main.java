@@ -1,7 +1,5 @@
 package org.example;
 
-import org.example.DIYarrayList;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
