@@ -2,6 +2,7 @@ package ru.archipov;
 
 import org.example.DIYarrayList;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ClassTest {
     static List<Integer> myList;
@@ -30,11 +33,11 @@ public class ClassTest {
         System.out.println("numbers содержит: " + Arrays.toString(numbers));
         Collections.addAll(myList, numbers);
         System.out.println("myList содержит:  " + myList + "\n");
+        assertEquals(21, numbers.length);
     }
 
     @Test
     public void CopyToMyList() {
-        System.out.println("TestClass beginning!");
         ArrayList<Integer> NumForCopy = new ArrayList<>();
         for (int i = 0; i < 26; i++) {
             NumForCopy.add(77);
@@ -42,10 +45,10 @@ public class ClassTest {
         System.out.println("NumForCopy содержит: " + NumForCopy);
         Collections.copy(NumForCopy, myList);
         System.out.println("NumForCopy содержит после копирования: " + NumForCopy + "\n");
+        assertEquals(26, NumForCopy.size());
     }
     @Test
     public void SortMyList() {
-        System.out.println("AfterAllClass beginning!");
         ArrayForSort = new DIYarrayList<>();
         ArrayForSort.add(8);
         ArrayForSort.add(4);
@@ -72,6 +75,7 @@ public class ClassTest {
         System.out.println("ArrayForSort содержит до сортировки:    " + ArrayForSort);
         Collections.sort(ArrayForSort);
         System.out.println("ArrayForSort содержит после сортировки: " + ArrayForSort);
+        assertEquals(22, ArrayForSort.size());
     }
 
     @AfterAll
