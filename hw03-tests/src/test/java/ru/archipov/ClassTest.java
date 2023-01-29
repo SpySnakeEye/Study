@@ -11,11 +11,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class ClassTest {
-    static List<Integer> myList = new DIYarrayList<>();
+    static List<Integer> myList;
+    Integer[] numbers;
+
+    List<Integer> ArrayForSort;
     @BeforeAll
     public static void BeforeAllClass() {
         System.out.println("BeforeAllClass beginning!");
-        Integer[] numbers = new Integer[21];
+        myList = new DIYarrayList<>();
+    }
+
+    @Test
+    public void AddToMyList() {
+        numbers = new Integer[21];
         for (int i = 0; i < 21; i++) {
             numbers[i] = i;
         }
@@ -25,7 +33,7 @@ public class ClassTest {
     }
 
     @Test
-    public void TestClass() {
+    public void CopyToMyList() {
         System.out.println("TestClass beginning!");
         ArrayList<Integer> NumForCopy = new ArrayList<>();
         for (int i = 0; i < 26; i++) {
@@ -35,10 +43,10 @@ public class ClassTest {
         Collections.copy(NumForCopy, myList);
         System.out.println("NumForCopy содержит после копирования: " + NumForCopy + "\n");
     }
-    @AfterAll
-    public static void AfterAllClass() {
+    @Test
+    public void SortMyList() {
         System.out.println("AfterAllClass beginning!");
-        List<Integer> ArrayForSort = new DIYarrayList<>();
+        ArrayForSort = new DIYarrayList<>();
         ArrayForSort.add(8);
         ArrayForSort.add(4);
         ArrayForSort.add(1);
@@ -66,4 +74,8 @@ public class ClassTest {
         System.out.println("ArrayForSort содержит после сортировки: " + ArrayForSort);
     }
 
+    @AfterAll
+    public static void AfterAllClass() {
+        System.out.println("AfterAllClass beginning!");
+    }
 }
