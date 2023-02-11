@@ -24,7 +24,7 @@ public class TestRunner {
         }
 
         Class<?> clazz2 = testClass.getClass();
-        Method[] methods2 = clazz1.getMethods();
+        Method[] methods2 = clazz2.getMethods();
         for (Method method : methods2) {
             if (method.isAnnotationPresent(Test.class)) {
                 Test test = method.getAnnotation(Test.class);
@@ -34,7 +34,7 @@ public class TestRunner {
         }
 
         Class<?> clazz3 = testClass.getClass();
-        Method[] methods3 = clazz1.getMethods();
+        Method[] methods3 = clazz3.getMethods();
         for (Method method : methods3) {
             if (method.isAnnotationPresent(After.class)) {
                 After after = method.getAnnotation(After.class);
