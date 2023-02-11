@@ -1,26 +1,27 @@
 package ru.archipov;
 
 import org.example.DIYarrayList;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.AfterAll;
+//import org.junit.jupiter.api.Assertions;
+//import org.junit.jupiter.api.BeforeAll;
+//import org.junit.jupiter.api.Test;
+import ru.archipov.TestRunner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ClassTest {
     static List<Integer> myList;
     Integer[] numbers;
 
     List<Integer> ArrayForSort;
-    @BeforeAll
-    public static void BeforeAllClass() {
-        System.out.println("BeforeAllClass beginning!");
+    @Before
+    public static void BeforeClass() {
+        System.out.println("\nBeforeClass beginning!\n");
         myList = new DIYarrayList<>();
     }
 
@@ -30,10 +31,11 @@ public class ClassTest {
         for (int i = 0; i < 21; i++) {
             numbers[i] = i;
         }
+        System.out.println("Test beginning:");
         System.out.println("numbers содержит: " + Arrays.toString(numbers));
         Collections.addAll(myList, numbers);
         System.out.println("myList содержит:  " + myList + "\n");
-        assertEquals(21, numbers.length);
+        //assertEquals(21, numbers.length);
     }
 
     @Test
@@ -42,10 +44,11 @@ public class ClassTest {
         for (int i = 0; i < 26; i++) {
             NumForCopy.add(77);
         }
+        System.out.println("Test beginning:");
         System.out.println("NumForCopy содержит: " + NumForCopy);
         Collections.copy(NumForCopy, myList);
         System.out.println("NumForCopy содержит после копирования: " + NumForCopy + "\n");
-        assertEquals(26, NumForCopy.size());
+        //assertEquals(26, NumForCopy.size());
     }
     @Test
     public void SortMyList() {
@@ -72,14 +75,15 @@ public class ClassTest {
         ArrayForSort.add(34);
         ArrayForSort.add(22);
         ArrayForSort.add(17);
+        System.out.println("Test beginning:");
         System.out.println("ArrayForSort содержит до сортировки:    " + ArrayForSort);
         Collections.sort(ArrayForSort);
-        System.out.println("ArrayForSort содержит после сортировки: " + ArrayForSort);
-        assertEquals(22, ArrayForSort.size());
+        System.out.println("ArrayForSort содержит после сортировки: " + ArrayForSort + "\n");
+        //assertEquals(22, ArrayForSort.size());
     }
 
-    @AfterAll
-    public static void AfterAllClass() {
-        System.out.println("AfterAllClass beginning!");
+    @After
+    public static void AfterClass() {
+        System.out.println("AfterClass beginning!");
     }
 }
