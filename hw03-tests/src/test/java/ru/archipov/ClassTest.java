@@ -15,6 +15,7 @@ import java.util.List;
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ClassTest {
+
     static List<Integer> myList;
     Integer[] numbers;
 
@@ -35,7 +36,10 @@ public class ClassTest {
         System.out.println("numbers содержит: " + Arrays.toString(numbers));
         Collections.addAll(myList, numbers);
         System.out.println("myList содержит:  " + myList + "\n");
-        //assertEquals(21, numbers.length);
+        if (numbers.length != 21) {
+            throw new AssertionError("Не верно!");
+        }
+
     }
 
     @Test
@@ -48,7 +52,9 @@ public class ClassTest {
         System.out.println("NumForCopy содержит: " + NumForCopy);
         Collections.copy(NumForCopy, myList);
         System.out.println("NumForCopy содержит после копирования: " + NumForCopy + "\n");
-        //assertEquals(26, NumForCopy.size());
+        if (NumForCopy.size() != 26) {
+            throw new AssertionError("Не верно!");
+        }
     }
     @Test
     public void SortMyList() {
@@ -79,7 +85,9 @@ public class ClassTest {
         System.out.println("ArrayForSort содержит до сортировки:    " + ArrayForSort);
         Collections.sort(ArrayForSort);
         System.out.println("ArrayForSort содержит после сортировки: " + ArrayForSort + "\n");
-        //assertEquals(22, ArrayForSort.size());
+        if (ArrayForSort.size() != 22) {
+            throw new AssertionError("Не верно!");
+        }
     }
 
     @After
