@@ -3,6 +3,8 @@ package ru.archipov;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 
 public class IoC {
@@ -22,13 +24,9 @@ public class IoC {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-
-            if (method.isAnnotationPresent(Log.class) &&args.length== 1) {
-                System.out.println("executed method: " + method.getName() + ", param: " + args[0]);
-            } else if (method.isAnnotationPresent(Log.class) &&args.length== 2) {
-                System.out.println("executed method: " + method.getName() + ", param: " + args[0] + ", " + args[1]);
-            } else if (method.isAnnotationPresent(Log.class) &&args.length== 3) {
-                System.out.println("executed method: " + method.getName() + ", param: " + args[0] + ", " + args[1] + ", " + args[2]);
+            String params = Arrays.stream(args).map(Object::toString).collect(Collectors.joining(", "));
+            if (method.isAnnotationPresent(Log.class)) {
+                System.out.println("executed method: " + method.getName() + ", param: " + params);
             }
             return method.invoke(myClass, args);
         }
