@@ -13,6 +13,7 @@
         <module>hw02-generics-collections</module>
         <module>hw03-tests</module>
         <module>hw04-log</module>
+        <module>hw05-gc</module>
     </modules>
 
     <properties>
