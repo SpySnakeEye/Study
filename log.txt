@@ -1,0 +1,4 @@
+[2023-04-10T16:39:54.833+0300][0.010s][info][gc] Using G1
+[2023-04-10T16:39:54.834+0300][0.011s][debug][gc] ConcGCThreads: 2 offset 16
+[2023-04-10T16:39:54.834+0300][0.011s][debug][gc] ParallelGCThreads: 8
+[2023-04-10T16:39:54.834+0300][0.011s][debug][gc] Initialize mark stack with 4096 chunks, maximum 524288
