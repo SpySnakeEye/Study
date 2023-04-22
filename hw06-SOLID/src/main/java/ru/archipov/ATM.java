@@ -46,7 +46,6 @@ public class ATM {
 
         if (balance < money || money % 10 != 0) {
             System.out.println("Ошибка, выберите другую сумму!");
-            return;
         } else {
             if (cell_5000.cell.size() >= n_5000) {
                 for (int i = 0; i < n_5000; i++) {
