@@ -14,6 +14,7 @@
         <module>hw03-tests</module>
         <module>hw04-log</module>
         <module>hw05-gc</module>
+        <module>hw06-SOLID</module>
     </modules>
 
     <properties>
