@@ -1,16 +1,20 @@
 package ru.archipov;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cell {
-    ArrayList<Integer> cell = new ArrayList<>();
+    int nominal;
+    List<Integer> cell = new ArrayList<>();
 
+    Cell(int nominal) {
+        this.nominal = nominal;
+    }
     public void take(int money) {
         cell.add(money);
     }
 
     public void get() {
-        cell.get(0);
         cell.remove(0);
     }
 
