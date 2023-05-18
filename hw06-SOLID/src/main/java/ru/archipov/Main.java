@@ -38,25 +38,6 @@ public class Main {
 
         atm.loadMoney(banknotaList);
         atm.getBalance();
-      /*  atm.loadMoney(50);
-        atm.getBalance();
-        atm.loadMoney(53);
-        atm.getBalance();
-        atm.loadMoney(100);
-        atm.getBalance();
-        atm.loadMoney(500);
-        atm.getBalance();
-        atm.loadMoney(1000);
-        atm.getBalance();
-        atm.loadMoney(1000);
-        atm.getBalance();
-        atm.loadMoney(1000);
-        atm.getBalance();
-        atm.loadMoney(5000);
-        atm.getBalance();
-        atm.loadMoney(5000);
-        atm.getBalance();
-       */
         atm.getMoney(10);
         atm.getBalance();
         atm.getMoney(10);

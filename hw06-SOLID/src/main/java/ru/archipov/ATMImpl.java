@@ -8,7 +8,7 @@ public class ATMImpl implements ATM {
 
     Algorithm algorithm;
 
-    ATMImpl (Map<Integer, Cell> cells, Algorithm algorithm) {
+    public ATMImpl(Map<Integer, Cell> cells, Algorithm algorithm) {
         this.cells = cells;
         this.algorithm = algorithm;
     }

@@ -7,7 +7,7 @@ public class Cell {
     int nominal;
     List<Integer> cell = new ArrayList<>();
 
-    Cell(int nominal) {
+    public Cell(int nominal) {
         this.nominal = nominal;
     }
     public void take(int money) {

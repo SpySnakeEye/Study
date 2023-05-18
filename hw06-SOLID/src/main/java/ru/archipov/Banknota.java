@@ -3,7 +3,7 @@ package ru.archipov;
 public class Banknota {
     private int nominal;
 
-    Banknota(int nominal) {
+    public Banknota(int nominal) {
         this.nominal = nominal;
     }
 
