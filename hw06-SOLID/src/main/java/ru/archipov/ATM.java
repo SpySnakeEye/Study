@@ -5,5 +5,5 @@ import java.util.List;
 public interface ATM {
      void loadMoney(List<Banknota> banknotaArrayList);
      void getMoney(int money);
-    public int getBalance();
+     int getBalance();
 }

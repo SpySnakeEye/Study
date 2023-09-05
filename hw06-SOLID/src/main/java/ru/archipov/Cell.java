@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cell {
-    int nominal;
-    List<Integer> cell = new ArrayList<>();
+    List<Integer> Banknota = new ArrayList<>();
 
     public Cell(int nominal) {
-        this.nominal = nominal;
     }
     public void take(int money) {
-        cell.add(money);
+        Banknota.add(money);
     }
 
     public void get() {
-        cell.remove(0);
+        Banknota.remove(0);
     }
 
+    public int getCount() {
+        return Banknota.size();
+    }
 }
